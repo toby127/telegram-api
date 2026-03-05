@@ -75,3 +75,40 @@ func (u *Update) SentFrom() *User {
 		return nil
 	}
 }
+
+func (u *Update) FromChat() Chat {
+	switch {
+	case u.Message != nil:
+		return u.Message.Chat
+	case u.EditedMessage != nil:
+		return u.EditedMessage.Chat
+	case u.ChannelPost != nil:
+		return u.ChannelPost.Chat
+	case u.EditedChannelPost != nil:
+		return u.EditedChannelPost.Chat
+	case u.BusinessMessage != nil:
+		return u.BusinessMessage.Chat
+	case u.EditedBusinessMessage != nil:
+		return u.EditedBusinessMessage.Chat
+	case u.DeletedBusinessMessages != nil:
+		return u.DeletedBusinessMessages.Chat
+	case u.MessageReaction != nil:
+		return u.MessageReaction.Chat
+	case u.MessageReactionCount != nil:
+		return u.MessageReactionCount.Chat
+	case u.CallbackQuery != nil:
+		return u.CallbackQuery.Message.Message.Chat
+	case u.MyChatMember != nil:
+		return u.MyChatMember.Chat
+	case u.ChatMember != nil:
+		return u.ChatMember.Chat
+	case u.ChatJoinRequest != nil:
+		return u.ChatJoinRequest.Chat
+	case u.ChatBoost != nil:
+		return u.ChatBoost.Chat
+	case u.RemovedChatBoost != nil:
+		return u.RemovedChatBoost.Chat
+	default:
+		return Chat{}
+	}
+}

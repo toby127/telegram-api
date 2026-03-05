@@ -3,6 +3,7 @@ package models
 import (
 	"encoding/json"
 	"fmt"
+	"strings"
 )
 
 // MaybeInaccessibleMessageType https://core.telegram.org/bots/api#maybeinaccessiblemessage
@@ -206,4 +207,24 @@ func (m *Message) IsCommand() bool {
 
 	entity := m.Entities[0]
 	return entity.Offset == 0 && entity.IsCommand()
+}
+
+func (m *Message) CommandWithAt() string {
+	if !m.IsCommand() {
+		return ""
+	}
+
+	// IsCommand() checks that the message begins with a bot_command entity
+	entity := m.Entities[0]
+	return m.Text[1:entity.Length]
+}
+
+func (m *Message) Command() string {
+	command := m.CommandWithAt()
+
+	if i := strings.Index(command, "@"); i != -1 {
+		command = command[:i]
+	}
+
+	return command
 }
