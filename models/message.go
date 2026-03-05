@@ -198,3 +198,12 @@ type DirectMessagesTopic struct {
 	TopicID int   `json:"topic_id"`
 	User    *User `json:"user,omitempty"`
 }
+
+func (m *Message) IsCommand() bool {
+	if m.Entities == nil || len(m.Entities) == 0 {
+		return false
+	}
+
+	entity := m.Entities[0]
+	return entity.Offset == 0 && entity.IsCommand()
+}

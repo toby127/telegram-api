@@ -54,3 +54,24 @@ const (
 	AllowedUpdateChatBoost               string = "chat_boost"
 	AllowedUpdateRemovedChatBoost        string = "removed_chat_boost"
 )
+
+func (u *Update) SentFrom() *User {
+	switch {
+	case u.Message != nil:
+		return u.Message.From
+	case u.EditedMessage != nil:
+		return u.EditedMessage.From
+	case u.InlineQuery != nil:
+		return u.InlineQuery.From
+	case u.ChosenInlineResult != nil:
+		return &u.ChosenInlineResult.From
+	case u.CallbackQuery != nil:
+		return &u.CallbackQuery.From
+	case u.ShippingQuery != nil:
+		return u.ShippingQuery.From
+	case u.PreCheckoutQuery != nil:
+		return u.PreCheckoutQuery.From
+	default:
+		return nil
+	}
+}

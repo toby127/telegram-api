@@ -34,3 +34,7 @@ type MessageEntity struct {
 	Language      string            `json:"language,omitempty"`
 	CustomEmojiID string            `json:"custom_emoji_id,omitempty"`
 }
+
+func (e MessageEntity) IsCommand() bool {
+	return e.Type == "bot_command"
+}
