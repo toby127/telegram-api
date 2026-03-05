@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api/models"
 )
 
 func assertFormData(t *testing.T, data, expect string) {
@@ -49,9 +49,9 @@ func Test_buildRequestForm(t *testing.T) {
 		InlineQueryResultInterface: &models.InlineQueryResultArticle{Title: "foo", Description: "bar", InputMessageContent: &models.InputTextMessageContent{MessageText: "foo"}},
 		InputStickerSlice: []models.InputSticker{
 			{
-				Sticker:   "attach://sticker.png",
-				Format:    "foo",
-				EmojiList: []string{"bar"},
+				Sticker:           "attach://sticker.png",
+				Format:            "foo",
+				EmojiList:         []string{"bar"},
 				StickerAttachment: strings.NewReader("sticker file"),
 			},
 			{

@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api/models"
 )
 
 type httpClient struct {

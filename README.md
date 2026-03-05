@@ -1,6 +1,6 @@
 # Golang Telegram Bot
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-telegram/bot)](https://goreportcard.com/report/github.com/go-telegram/bot) [![codecov](https://codecov.io/gh/go-telegram/bot/branch/main/graph/badge.svg?token=57B1OR6PCK)](https://codecov.io/gh/go-telegram/bot)
+[![Go Report Card](https://goreportcard.com/badge/github.com/toby127/telegram-api)](https://goreportcard.com/report/github.com/toby127/telegram-api) [![codecov](https://codecov.io/gh/toby127/telegram-api/branch/main/graph/badge.svg?token=57B1OR6PCK)](https://codecov.io/gh/toby127/telegram-api)
 
 ✅ Present in the list of libraries https://core.telegram.org/bots/samples#go
 
@@ -20,8 +20,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/go-telegram/bot"
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api"
+	"github.com/toby127/telegram-api/models"
 )
 
 // Send any text message to the bot after the bot has been started
@@ -61,7 +61,7 @@ Go version: **1.18**
 Install the dependencies:
 
 ```bash
-go get -u github.com/go-telegram/bot
+go get -u github.com/toby127/telegram-api
 ```
 
 Initialize and run the bot:
@@ -335,7 +335,7 @@ If you want to use `attach://` format, you should to define `StickerAttachment` 
 fileContent, _ := os.ReadFile("/path/to/telegram.png")
 
 inputSticker1 := models.InputSticker{
-	Sticker:   "https://github.com/go-telegram/bot/blob/main/examples/create_new_sticker_set/images/telegram.png?raw=true",
+	Sticker:   "https://github.com/toby127/telegram-api/blob/main/examples/create_new_sticker_set/images/telegram.png?raw=true",
 	Format:    "static",
 	EmojiList: []string{"1️⃣"},
 }

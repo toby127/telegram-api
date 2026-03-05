@@ -3,7 +3,7 @@ package bot
 import (
 	"context"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api/models"
 )
 
 func applyMiddlewares(h HandlerFunc, m ...Middleware) HandlerFunc {

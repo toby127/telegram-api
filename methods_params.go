@@ -1,7 +1,7 @@
 package bot
 
 import (
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api/models"
 )
 
 type SetWebhookParams struct {
@@ -1207,17 +1207,17 @@ type TransferBusinessAccountStarsParams struct {
 
 // GetBusinessAccountGiftsParams https://core.telegram.org/bots/api#getbusinessaccountgifts
 type GetBusinessAccountGiftsParams struct {
-	BusinessConnectionID       string `json:"business_connection_id"`
-	ExcludeUnsaved             bool   `json:"exclude_unsaved,omitempty"`
-	ExcludeSaved               bool   `json:"exclude_saved,omitempty"`
-	ExcludeUnlimited           bool   `json:"exclude_unlimited,omitempty"`
-	ExcludeLimitedUpgradable   bool   `json:"exclude_limited_upgradable,omitempty"`
+	BusinessConnectionID        string `json:"business_connection_id"`
+	ExcludeUnsaved              bool   `json:"exclude_unsaved,omitempty"`
+	ExcludeSaved                bool   `json:"exclude_saved,omitempty"`
+	ExcludeUnlimited            bool   `json:"exclude_unlimited,omitempty"`
+	ExcludeLimitedUpgradable    bool   `json:"exclude_limited_upgradable,omitempty"`
 	ExcludeLimitedNonUpgradable bool   `json:"exclude_limited_non_upgradable,omitempty"`
-	ExcludeUnique              bool   `json:"exclude_unique,omitempty"`
-	ExcludeFromBlockchain      bool   `json:"exclude_from_blockchain,omitempty"`
-	SortByPrice                bool   `json:"sort_by_price,omitempty"`
-	Offset                     string `json:"offset,omitempty"`
-	Limit                      int    `json:"limit,omitempty"`
+	ExcludeUnique               bool   `json:"exclude_unique,omitempty"`
+	ExcludeFromBlockchain       bool   `json:"exclude_from_blockchain,omitempty"`
+	SortByPrice                 bool   `json:"sort_by_price,omitempty"`
+	Offset                      string `json:"offset,omitempty"`
+	Limit                       int    `json:"limit,omitempty"`
 }
 
 // ConvertGiftToStarsParams https://core.telegram.org/bots/api#convertgifttostars

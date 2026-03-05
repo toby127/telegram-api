@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"time"
 
-	"github.com/go-telegram/bot"
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api"
+	"github.com/toby127/telegram-api/models"
 )
 
 // This example demonstrates how to use sendMessageDraft to stream

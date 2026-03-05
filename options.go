@@ -3,7 +3,7 @@ package bot
 import (
 	"time"
 
-	"github.com/go-telegram/bot/models"
+	"github.com/toby127/telegram-api/models"
 )
 
 // Option is a function that configures a bot.
